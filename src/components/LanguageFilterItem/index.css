@@ -1,0 +1,43 @@
+.language-item {
+  list-style-type: none;
+  margin: 10px;
+  margin-bottom: 5px;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .language-item {
+    margin-right: 18px;
+  }
+}
+
+.language-button {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: #0f172a;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 2px 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .language-button {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .language-button {
+    font-size: 20px;
+  }
+}
+
+.is-active {
+  color: #0284c7;
+  background-color: transparent;
+  border: 1px solid #0284c7;
+  border-radius: 16px;
+}
