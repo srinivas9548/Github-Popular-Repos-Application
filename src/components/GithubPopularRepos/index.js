@@ -46,25 +46,25 @@ class GithubPopularRepos extends Component {
 
     const {activeLanguageId} = this.state
 
-    const response = await fetch(`${githubReposApiUrl}${activeLanguageId}`)
+    try {
+      const response = await fetch(`${githubReposApiUrl}${activeLanguageId}`)
 
-    if (response.ok === true) {
-      const data = await response.json()
-      const updatedData = data.popular_repos.map(eachItem => ({
-        avatarUrl: eachItem.avatar_url,
-        forksCount: eachItem.forks_count,
-        id: eachItem.id,
-        issuesCount: eachItem.issues_count,
-        name: eachItem.name,
-        starsCount: eachItem.stars_count,
-      }))
-      this.setState({
-        popularReposList: updatedData,
-        apiStatus: apiStatusConstants.success,
-      })
-    }
-
-    if (response.status === 401) {
+      if (response.ok === true) {
+        const data = await response.json()
+        const updatedData = data.popular_repos.map(eachItem => ({
+          avatarUrl: eachItem.avatar_url,
+          forksCount: eachItem.forks_count,
+          id: eachItem.id,
+          issuesCount: eachItem.issues_count,
+          name: eachItem.name,
+          starsCount: eachItem.stars_count,
+        }))
+        this.setState({
+          popularReposList: updatedData,
+          apiStatus: apiStatusConstants.success,
+        })
+      }
+    } catch (e) {
       this.setState({
         apiStatus: apiStatusConstants.failure,
       })

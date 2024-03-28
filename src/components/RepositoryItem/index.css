@@ -33,14 +33,14 @@
 
 .popular-repo-name {
   font-family: 'Roboto';
-  font-size: 24px;
+  font-size: 20px;
   color: #e73959;
   font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
   .popular-repo-name {
-    font-size: 32px;
+    font-size: 26px;
   }
 }
 
